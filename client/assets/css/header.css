@@ -23,7 +23,8 @@
   
   header {
 	position: relative;
-	height: 110px;
+	/* Dinámico, se ajusta a la pantalla*/
+	height: calc(30vh - 100px); 
 	overflow: hidden;
 	background-position: center;
 	background-size: cover;

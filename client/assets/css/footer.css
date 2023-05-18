@@ -4,18 +4,23 @@ footer {
 	background-color: #c78c19;
 	padding-left: 40px;
 	padding-right: 10px;
+	padding-top: 20PX;
 	padding-bottom: 20px;
+	position: relative;
+	left: 0; 
+	bottom: 0; 
+	width: 100%;
 }
 
 .footer_text{
 	font-size: 20px;
 	font-weight: bold;
 	color:#fff ;
-	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .footer-p{
-	margin-top: 20px;
+	margin-top: 30px;
 	color:#fff ;
 }
 
