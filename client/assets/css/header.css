@@ -23,7 +23,7 @@
   
   header {
 	position: relative;
-	height: calc(100vh - 100px);
+	height: 110px;
 	overflow: hidden;
 	background-position: center;
 	background-size: cover;
