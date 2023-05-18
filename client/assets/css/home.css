@@ -1,4 +1,4 @@
-  .header__text {
+.header__text {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -64,24 +64,71 @@
   #radio4:checked ~ .first {
 	margin-left: -75%;
   }
-
-  .container_title{
+  
+  .container_title_service {
 	font-size: 41px;
 	color: #c78c19;
-	padding-left: 60px;
 	padding-top: 20px;
-  }
+	margin-left: -10px;
+  }  
 
-  .container_text{
-	padding-left: 60px;
+  .container_title {
+	font-size: 41px;
+	color: #c78c19;
+	padding-top: 20px;
+	margin-left: 240px;
+  }  
+  
+  .container_text_service {
+	padding-left: 30px;
 	padding-top: 20px;
 	font-size: 20px;
   }
 
-  .container_item{
+  .container_text {
+	padding-left: 300px;
 	padding-top: 20px;
-	padding-left: 100px;
-	padding-bottom: 20px;
+	font-size: 20px;
+  }
+  
+  .services {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 20px;
+	justify-items: center;
+	align-items: flex-start;
+  }
+
+  .services p {
+	grid-column: 1 / -1;
+  }  
+  
+ .container_item {
 	font-weight: bold;
 	font-size: 20px;
+	width: 200px;
+  } 
+
+  .container_items {
+	font-weight: bold;
+	font-size: 20px;
+	width: 300px;
+	padding-left: 300px;
+	padding-top: 20px;
+  } 
+  
+  .services .footer2 {
+	width: 80px;
+	height: 80px;
+	margin-bottom: 10px;
   }
+  
+  @media (max-width: 767px) {
+	.services {
+	  grid-template-columns: 1fr;
+	}
+  }
+  
+  .places {
+	margin-bottom: 30px;
+  }  
