@@ -1,0 +1,174 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateHabitacionInput {
+  capacidad: Int!
+  estado: String!
+  id: Int!
+  precio: Float!
+  tipo_habitacion_id: Int!
+  ubicacion: String!
+}
+
+input CreateReservacionInput {
+  cantidad_habitaciones: Int!
+  fecha_final: DateTime!
+  fecha_inicio: DateTime!
+  num_cuartos: Int!
+
+  """Example field (placeholder)"""
+  num_huespedes: Int!
+  persona_id: Int!
+}
+
+input CreateTipoHabitacionInput {
+  id: Int!
+  tipo: String!
+}
+
+input CreateTipoUsuarioInput {
+  nombre: String!
+}
+
+input CreateUsuarioInput {
+  apMaterno: String
+  apPaterno: String!
+  fech_nacimiento: String!
+  nombre: String!
+  numTelefono: String!
+  tipo_usuario_id: Int!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Habitacion {
+  capacidad: Int!
+  estado: String!
+
+  """Id de la habitación es su número"""
+  id: Int!
+  precio: Float!
+  reservacion: [Reservacion!]
+  tipo_habitacion: TipoHabitacion
+  tipo_habitacion_id: Int!
+  tipohabitacion: TipoHabitacion!
+  ubicacion: String!
+}
+
+type Mutation {
+  actualizarTipoUsuario(updateTipoUsuarioInput: UpdateTipoUsuarioInput!): TipoUsuario!
+  actualizarUsuario(updateUsuarioInput: UpdateUsuarioInput!): Usuario!
+  borrarTipoUsuario(id: Float!): String!
+  borrarUsuario(id: Float!): String!
+  crearTipoUsuario(tipoUsuarioInput: CreateTipoUsuarioInput!): TipoUsuario!
+  crearUsuario(usuarioInput: CreateUsuarioInput!): Usuario!
+  createHabitacion(createHabitacionInput: CreateHabitacionInput!): Habitacion!
+  createReservacion(createReservacionInput: CreateReservacionInput!): Reservacion!
+  createTipoHabitacion(createTipoHabitacionInput: CreateTipoHabitacionInput!): TipoHabitacion!
+  removeHabitacion(id: Int!): Habitacion!
+  removeReservacion(id: Int!): Reservacion!
+  removeTipoHabitacion(id: Int!): TipoHabitacion!
+  updateHabitacion(updateHabitacionInput: UpdateHabitacionInput!): Habitacion!
+  updateReservacion(updateReservacionInput: UpdateReservacionInput!): Reservacion!
+  updateTipoHabitacion(updateTipoHabitacionInput: UpdateTipoHabitacionInput!): TipoHabitacion!
+}
+
+type Query {
+  habitacion(id: Int!): Habitacion!
+  habitaciones: [Habitacion!]!
+  reservacion(id: Int!): Reservacion!
+  reservaciones: [Reservacion!]!
+  tipoHabitacion(id: Int!): TipoHabitacion!
+  tipoHabitaciones: [TipoHabitacion!]!
+  tipoUsuario(id: Float!): TipoUsuario!
+  tipoUsuarios: [TipoUsuario!]!
+  usuario(id: Float!): Usuario!
+  usuarios: [Usuario!]!
+}
+
+type Reservacion {
+  cantidad_habitaciones: Float!
+  fecha_final: DateTime!
+  fecha_inicio: DateTime!
+  fecha_reserva: DateTime!
+  habitacion: Habitacion
+  habitacion_id: Int!
+  hora_registro: String!
+
+  """Example field (placeholder)"""
+  id: Int!
+  monto: Float!
+  num_cuartos: Float!
+  num_huespedes: Float!
+  periodo: Float!
+  persona_id: Float!
+}
+
+type TipoHabitacion {
+  """Example field (placeholder)"""
+  id: Int!
+  tipo: String!
+}
+
+type TipoUsuario {
+  id: Int!
+  nombre: String!
+  usuarios: [Usuario!]
+}
+
+input UpdateHabitacionInput {
+  capacidad: Int
+  estado: String
+  id: Int!
+  precio: Float
+  tipo_habitacion_id: Int
+  ubicacion: String
+}
+
+input UpdateReservacionInput {
+  cantidad_habitaciones: Int
+  fecha_final: DateTime
+  fecha_inicio: DateTime
+  id: Int!
+  num_cuartos: Int
+
+  """Example field (placeholder)"""
+  num_huespedes: Int
+  persona_id: Int
+}
+
+input UpdateTipoHabitacionInput {
+  id: Int!
+  tipo: String
+}
+
+input UpdateTipoUsuarioInput {
+  id: Int!
+  nombre: String
+}
+
+input UpdateUsuarioInput {
+  apMaterno: String
+  apPaterno: String
+  fech_nacimiento: String
+  id: Int!
+  nombre: String
+  numTelefono: String
+  tipo_usuario_id: Int
+}
+
+type Usuario {
+  apMaterno: String
+  apPaterno: String!
+  fech_nacimiento: String!
+  id: Float!
+  nombre: String!
+  numTelefono: String!
+  tipoUsuario: TipoUsuario!
+  tipo_usuario: TipoUsuario @deprecated(reason: "Este campo ha cambiado su valor")
+  tipo_usuario_id: Float!
+}
