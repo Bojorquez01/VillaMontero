@@ -129,6 +129,20 @@
 	}
   }
   
+  .review {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+	padding-left: 300px;
+	padding-top: 30px;
+  }
+  
+  .rating-stars {
+	width: 20px;
+	height: 20px;
+	margin-left: 10px;
+  }
+  
   .places {
 	margin-bottom: 30px;
   }  
